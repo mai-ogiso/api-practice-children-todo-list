@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const PORT = process.env.PORT || 3000
+
+// Allow all origins to make requests
+app.use(cors());
 
 const todoList =
     [
