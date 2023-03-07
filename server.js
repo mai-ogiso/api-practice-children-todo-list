@@ -24,6 +24,20 @@ const todoList =
         },
         {
             'list': {
+                'en': 'Wash your face',
+                'ja': '顔を洗う'
+            },
+            'schoolLevel': ['elementary', 'kindergarten'],
+            //            'grade': 1,
+            'time': 'morning',
+            'image': 'https://4.bp.blogspot.com/-RzLtft39Ais/U5hURwV97cI/AAAAAAAAhG8/Z78TtB4ZmgE/s800/sengan_boy.png',
+            'validPeriod': {
+                'start': new Date('2023-04-01T00:00:00.000+09:00'), // start date in Japanese timezone
+                'end': new Date('9999-12-31T00:00:00.000+09:00') // end date in Japanese timezone
+            }
+        },
+        {
+            'list': {
                 'en': 'Change the cloths',
                 'ja': '着替える'
             },
@@ -38,13 +52,27 @@ const todoList =
         },
         {
             'list': {
-                'en': 'Wash your face',
-                'ja': '顔を洗う'
+                'en': 'Put handkerchief and tissue in pocket',
+                'ja': 'ハンカチとティッシュをポケットに入れる'
             },
-            'schoolLevel': ['elementary', 'kindergarten'],
+            'schoolLevel': ['elementary'],
             //            'grade': 1,
             'time': 'morning',
-            'image': 'https://4.bp.blogspot.com/-RzLtft39Ais/U5hURwV97cI/AAAAAAAAhG8/Z78TtB4ZmgE/s800/sengan_boy.png',
+            'image': 'https://4.bp.blogspot.com/-JiiKULzji_0/VbnRqmbTgwI/AAAAAAAAwOo/1g1JRFOVy1w/s800/pocket_tissue.png',
+            'validPeriod': {
+                'start': new Date('2023-04-01T00:00:00.000+09:00'), // start date in Japanese timezone
+                'end': new Date('9999-12-31T00:00:00.000+09:00') // end date in Japanese timezone
+            }
+        },
+        {
+            'list': {
+                'en': 'Do your homework',
+                'ja': '宿題をする'
+            },
+            'schoolLevel': ['elementary'],
+            //            'grade': 1,
+            'time': 'evening',
+            'image': 'https://4.bp.blogspot.com/-aQsRGok8rpg/VkLHWLkUrtI/AAAAAAAA0Vc/_yl2mG6H36k/s800/study_wakaru_boy.png',
             'validPeriod': {
                 'start': new Date('2023-04-01T00:00:00.000+09:00'), // start date in Japanese timezone
                 'end': new Date('9999-12-31T00:00:00.000+09:00') // end date in Japanese timezone
@@ -68,17 +96,17 @@ app.get('/api/:school', (req, res) => {
         // Return the filtered list as the response
         res.json({
             'list': {
-              'en': 'unknown',
-              'ja': 'unknown'
+                'en': 'unknown',
+                'ja': 'unknown'
             },
             'schoolLevel': ['unknown'],
             'time': 'unknown',
             'image': 'unknown',
             'validPeriod': {
-              'start': 'unknown',
-              'end': 'unknown'
+                'start': 'unknown',
+                'end': 'unknown'
             }
-          });
+        });
 
     } else {
         // Return the filtered list as the response
